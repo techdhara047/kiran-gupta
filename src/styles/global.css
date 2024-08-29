@@ -8,4 +8,11 @@
 body {
     background-color: #262827;
     color: white;
+    /* color: wheat; */
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
 }
