@@ -8,7 +8,8 @@ const projects = await getCollection("projects");
   {
     projects.map((project) => (
       <article>
-        <h2>{project.data.title}</h2>
+        <h2>Projects</h2>
+        <h3>{project.data.title}</h3>
         <p>{project.data.description}</p>
       </article>
     ))
