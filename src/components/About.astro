@@ -17,21 +17,37 @@ import { Image } from "astro:assets";
 
     <table>
       <tr>
+        <th>Born: </th><td>16 July 1995</td>
+      </tr>
+      <tr>
         <th>Nationality: </th><td>Indian</td>
       </tr>
       <tr>
         <th>Gender: </th><td>Female</td>
       </tr>
-      <tr>
-        <th>Born: </th><td>5 March 1995</td>
-      </tr>
+
       <tr>
         <th>Email: </th><td>Kirangupta835@gmail.com</td>
       </tr>
       <tr>
+        <th>Langauges: </th><td>Hindi, English</td>
+      </tr>
+
+      <tr>
         <!-- <th>Age: </th><td>{calculateAge("1995-03-5")}</td> -->
       </tr>
     </table>
+    <div class="skills">
+      <h4>IT Skills</h4>
+      <ul>
+        <li>MS Office (MS Word, Advanced Excel, Outlook, and PowerPoint)</li>
+        <li>Operating Systems: Linux, Windows</li>
+        <li>SQL</li>
+        <li>Python</li>
+        <li>Power BI</li>
+        <li>Statistical Knowledge</li>
+      </ul>
+    </div>
   </div>
   <div class="social-media-links">
     <MediaLinks />
@@ -46,11 +62,11 @@ import { Image } from "astro:assets";
     top: 0;
     bottom: 0;
     right: 0;
-    width: min(300px, 70%);
+    width: min(350px, 70%);
     background-color: white;
     transform: translateX(100%);
     transition: transform 0.2s ease-in-out;
-    padding-block: 1rem;
+    padding-block: 0.2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,6 +75,9 @@ import { Image } from "astro:assets";
     overflow-y: auto;
     font-size: 0.9rem;
   }
+  .content {
+    padding: 2rem;
+  }
   .profile {
     align-self: center;
     display: flex;
@@ -66,7 +85,6 @@ import { Image } from "astro:assets";
     align-items: center;
     justify-content: center;
     gap: 0.6rem;
-    margin-top: 4rem;
   }
   .profile h3 {
     font-size: 1.8em;
@@ -84,8 +102,18 @@ import { Image } from "astro:assets";
   }
   table {
     font-size: 0.8rem;
-    margin-top: 2rem;
+    margin-top: 0.4rem;
     text-align: center;
+  }
+  .skills {
+    font-size: 0.9em;
+  }
+  .skills ul {
+    margin-left: 0.8rem;
+  }
+  .skills li {
+    margin-block: 0.4rem;
+    list-style-type: disc;
   }
 
   td {
