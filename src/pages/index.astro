@@ -24,6 +24,7 @@ import Projects from "../components/Projects.astro";
         <div class="links">
           <MediaLinks />
         </div>
+        <a href="#" class="resume">Resume</a>
       </div>
       <figure class="right">
         <MaskedImage>
@@ -72,7 +73,23 @@ import Projects from "../components/Projects.astro";
     text-align: center;
   }
   .links {
-    margin-top: 2rem;
+    margin-block: 1.2rem;
+  }
+  .resume {
+    border: 1px solid black;
+    color: black;
+    padding: 0.4rem 1rem;
+    transition: 0.2s linear;
+    border-radius: 2px;
+  }
+  .resume:hover {
+    box-shadow:
+      rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px,
+      rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px,
+      rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transform: translateY(-10px);
   }
 
   .right {
