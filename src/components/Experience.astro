@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+
+const experience = await getCollection("experience");
+console.log("exp", experience);
+---
+
+<section class="experience" id="experience">
+  {
+    experience.map((exp) => (
+      <article>
+        <h2>{exp.data.title}</h2>
+        <h3>{exp.data.company}</h3>
+        <p>
+          <strong>{exp.data.position}</strong> from {exp.data.startDate} to{" "}
+          {exp.data.endDate}
+        </p>
+        <ul>
+          {exp.data.bulletPoints?.map((point) => (
+            <li>{point}</li>
+          ))}
+        </ul>
+      </article>
+    ))
+  }
+</section>
+
+<style>
+  .experience li {
+    margin: 0.8rem;
+    list-style-type: disc;
+    margin-left: 3rem;
+  }
+  .experience h2 {
+    margin-bottom: 0.8rem;
+  }
+</style>

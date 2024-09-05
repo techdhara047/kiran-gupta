@@ -1,93 +1,43 @@
 ---
 import { Image } from "astro:assets";
-import img from "../assets/img/2.png";
-import { Icon } from "astro-icon/components";
+import img from "../assets/img/5.png";
 import "../styles/global.css";
-
-import About from "../components/About.astro";
+import DivShade from "../components/DivShade.astro";
+import Layout from "../layout/layout.astro";
 import MediaLinks from "../components/MediaLinks.astro";
-import Tabs from "../components/Tabs";
+import MaskedImage from "../components/MaskedImage.astro";
+import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Kiran Gupta</title>
-    <script>
-      import "../scripts/main.js";
-    </script>
-  </head>
-  <body>
-    <About />
-    <span class="about-icon" data-menu>
-      <Icon name="mdi:menu" />
-    </span>
-
-    <div class="social-links">
-      <MediaLinks />
-    </div>
-
-    <div class="container">
-      <section class="landing">
-        <div class="box">
-          <div class="left">
-            <h1>Kiran Gupta</h1>
-            <!-- <h2>Chinese Actor</h2> -->
-            <p>
-              I want to be part of the success in an environment of growth and
-              excellence. Also, emphasize my eagerness to learn, willingness to
-              contribute, and desire to gain valuable experience in the
-              industry.
-            </p>
-            <div class="filmography">
-              <div class="rect">
-                <h4>21</h4>
-                <p>TV Shows</p>
-              </div>
-              <div class="rect">
-                <h4>1</h4>
-                <p>Movies</p>
-              </div>
-              <div class="rect">
-                <h4>1</h4>
-                <p>Variety Shows</p>
-              </div>
-            </div>
-          </div>
-          <figure class="right">
-            <Image src={img} alt="cover" format="avif" />
-          </figure>
+<Layout>
+  <section class="landing">
+    <div class="box">
+      <div class="left">
+        <h1>Kiran Gupta</h1>
+        <!-- <h2>Chinese Actor</h2> -->
+        <p>
+          I want to be part of the success in an environment of growth and
+          excellence. Also, emphasize my eagerness to learn, willingness to
+          contribute, and desire to gain valuable experience in the industry.
+        </p>
+        <div class="links">
+          <MediaLinks />
         </div>
-      </section>
-      <!-- <header></header> -->
-      <!-- <div class="main">
-        <Tabs client:visible />
-      </div> -->
+      </div>
+      <figure class="right">
+        <MaskedImage>
+          <Image src={img} alt="cover" format="avif" />
+        </MaskedImage>
+      </figure>
     </div>
-  </body>
-</html>
-
+  </section>
+  <!-- experience -->
+  <Experience />
+  <!-- projects -->
+  <Projects />
+</Layout>
 <style>
-  .about-icon {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: white;
-  }
-  .about-icon:hover {
-    color: #ff9f1a;
-  }
-  .social-links {
-    position: fixed;
-    top: 1rem;
-    left: 2rem;
-  }
-
   .landing {
     height: 100dvh;
   }
@@ -104,12 +54,12 @@ import Tabs from "../components/Tabs";
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: end;
+    justify-content: center;
     gap: 0.5rem;
-    padding: 2rem;
+    padding: 0.6rem;
   }
   .left h1 {
-    font-size: clamp(2rem, 10vw, 5rem);
+    font-size: clamp(2rem, 15vw, 5rem);
   }
   .left h1 > span {
     font-size: 0.3em;
@@ -121,26 +71,10 @@ import Tabs from "../components/Tabs";
     line-height: 1.4rem;
     text-align: center;
   }
-  .filmography {
-    display: flex;
-    gap: 2rem;
-    margin-top: 3rem;
+  .links {
+    margin-top: 2rem;
   }
-  .rect {
-    padding: 1rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-  }
-  .rect h4 {
-    font-size: 2.2rem;
-    font-weight: bold;
-    margin-bottom: 0.3rem;
-  }
-  .rect p {
-    font-size: 0.85rem;
-  }
+
   .right {
     display: flex;
     justify-content: space-around;
@@ -148,18 +82,7 @@ import Tabs from "../components/Tabs";
   }
   .right img {
     width: 90%;
-    height: 80%;
-    object-fit: contain;
-  }
-
-  header {
-    height: 40px;
-    background-color: #ff9f1a;
-    position: sticky;
-    top: 0;
-  }
-  .main {
-    height: 150dvh;
+    height: auto;
   }
 
   @media only screen and (max-width: 786px) {
@@ -170,9 +93,10 @@ import Tabs from "../components/Tabs";
       flex-direction: column-reverse;
     }
     .right {
+      padding: 2rem;
     }
     .right img {
-      width: 75%;
+      width: 100%;
       height: auto;
       object-fit: contain;
     }
@@ -184,12 +108,9 @@ import Tabs from "../components/Tabs";
         opacity: 1;
       }
     }
-    .filmography {
+    .links {
       margin-top: 1rem;
       gap: 1rem;
-    }
-    .social-links {
-      display: none;
     }
   }
 </style>

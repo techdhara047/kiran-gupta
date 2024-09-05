@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+---
+
+<section class="projects" id="projects">
+  {
+    projects.map((project) => (
+      <article>
+        <h2>{project.data.title}</h2>
+        <p>{project.data.description}</p>
+      </article>
+    ))
+  }
+</section>
+
+<style>
+  h2 {
+    margin-bottom: 0.8rem;
+  }
+  p {
+    margin-left: 3rem;
+  }
+</style>

@@ -1,0 +1,72 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<header>
+  <nav>
+    <ul>
+      <li>𝕶𝖎𝖗𝖆𝖓 𝕲𝖚𝖕𝖙𝖆</li>
+    </ul>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <!-- <li><a href="#about">About</a></li> -->
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <!-- <li><a href="#contact">Contact</a></li> -->
+    </ul>
+    <ul>
+      <li class="menu-icon" data-menu><Icon name="mdi:menu" /></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0.5rem 4rem;
+    font-size: 0.9rem;
+    z-index: 1000;
+    transition: 0.2s ease-in-out;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  ul {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  .menu-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .nav-links li:hover {
+    text-decoration: underline;
+  }
+  li a {
+    color: black;
+  }
+  ul:first-child li {
+    font-size: 1.4rem;
+  }
+  .nav-links {
+    margin-left: auto;
+    margin-right: 0.8rem;
+  }
+
+  @media only screen and (max-width: 786px) {
+    header {
+      padding-inline: 1rem;
+    }
+
+    .nav-links {
+      display: none;
+    }
+  }
+</style>
